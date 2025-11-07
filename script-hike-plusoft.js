@@ -176,7 +176,6 @@
                 const ItensVinculado = document.querySelectorAll('a[data-target="#collapse-section-1743106628590"]');
                 for (let cri = 0; cri < ItensVinculado.length; cri++) {
                     ItensVinculado[cri].click();
-                    const FechaItensVinculados = document.querySelector('a[data-target="#collapse-section-1743106628590"]').setAttribute('data-target', '#collapse-section1743106628590');
                 }
             }
             else if (inputPrefixo.includes("CAMP-")) {
