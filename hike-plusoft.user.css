@@ -4,7 +4,7 @@
 @version			2026.02.10
 @author				@MakotoWatanabe <fernandomakoto@plusoft.com>
 @description		Ajustes e melhorias para plataform Plusoft Hike
-@homepageURL		https://userstyles.world/api/style/22878/
+@homepageURL		https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/hike-plusoft.user.css
 @updateURL			https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/hike-plusoft.user.css
 ==/UserStyle== */
 
@@ -1186,27 +1186,22 @@
 
 @-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/BPM_WORKFLOW_"), url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/HIKE_") {/* KANBAN e LIST */
 
-	.row.ng-scope {margin:0 !important; padding:0 !important}
-	
-	
-			
-	.row-content-page-head > div:nth-child(1) {
-		display:none
+	.row.ng-scope {margin:0 !important;}
+		
+	.page-content .panel {
+		background-color: initial;
+		margin-bottom: 0 !important;
 	}
+
+	
 	
 	#page-head {
-		position:absolute;
-		bottom: 0;
-		width:100%;
+		display:none;
 	}
 	
 	.page-actions {
 		padding: 0 !important;
-		position: absolute;
-		top: initial;
-		bottom:22px;
-		z-index: 3;
-		left: calc(100% - 50px)
+		text-align:center;
 	}
 	.btn.btn-labeled {
 		padding: 6px;
@@ -1218,14 +1213,9 @@
 		line-height: initial !important;
 		margin: initial;
 	}
-	/*.btn.btn-labeled span {
-		display:none;
-	}*/
 	
-	.page-content .panel {
-		background-color: initial;
-		margin-bottom: 0 !important;
-	}
+	
+	
 /* Seletores de Busca e filtro */
 	
 	/* BUSCAR */
@@ -1250,9 +1240,43 @@
 	}
 	
 	
+/* LISTA - modo tabela */
+	#container-list {
+		height: calc(100vh - 160px);
+	}
 	
+	#finder-list-table thead {
+		position: sticky;
+		top: 0;
+		background-color: var(--gray-50);
+	}
 	
+	.finder-table .label-success,
+	.finder-table .label-danger,
+	.finder-table .label-warning,
+	.finder-table .label-primary,
+	.finder-table .label-default {
+		background-color: transparent !important;
+		color: var(--gray-800) !important;
+		display: initial; 
+	}
 	
+	.finder-table span[uib-tooltip="Em andamento"]{
+		color: var(--celery-700) !important;
+	}
+	
+	.finder-table span[uib-tooltip="Em aprovação"]{
+		color: var(--orange-400) !important;
+	}
+	
+	.table-striped > tbody > tr:nth-child(2n+1) {
+		background-color: transparent !important;
+	}
+	
+	.table-striped > tbody > tr[style="background-color: rgba(255, 199, 199, 0.41);"] {
+		background-color: rgba(255, 0, 0, .2) !important;
+	}
+
 	
 /* KANBAN - Modo cards */
 	#view-layout {
@@ -1651,46 +1675,7 @@
 	
 	#page-slide-btn i:after {left: 7px; top: 12px;}
 	#page-slide-btn i:before {left: 14px; top: 19px;}
-	
-	
-	
-	
-/* LISTA modo tabela */
-	#container-list {
-		height: calc(100vh - 180px);
-	}
-	
-	#finder-list-table thead {
-		position: sticky;
-		top: 0;
-		background-color: var(--gray-50);
-	}
-	
-	.finder-table .label-success,
-	.finder-table .label-danger,
-	.finder-table .label-warning,
-	.finder-table .label-primary,
-	.finder-table .label-default {
-		background-color: transparent !important;
-		color: var(--gray-800) !important;
-		display: initial; 
-	}
-	
-	.finder-table span[uib-tooltip="Em andamento"]{
-		color: var(--celery-700) !important;
-	}
-	
-	.finder-table span[uib-tooltip="Em aprovação"]{
-		color: var(--orange-400) !important;
-	}
-	
-	.table-striped > tbody > tr:nth-child(2n+1) {
-		background-color: transparent !important;
-	}
-	
-	.table-striped > tbody > tr[style="background-color: rgba(255, 199, 199, 0.41);"] {
-		background-color: rgba(255, 0, 0, .2) !important;
-	}
+
 	
 	
 }
