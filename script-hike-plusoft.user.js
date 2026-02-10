@@ -4,7 +4,7 @@
 // @version      2026.02.10
 // @author       MakotoWatanabe
 // @icon         https://hikeplatform.com/wp-content/themes/area-structure-1/assets/images/favicon.png
-// @match        https://plusoft-itsm.inpaas.com/forms-v2/*
+// @match        https://plusoft-itsm.inpaas.com/*
 // @downloadURL  https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/script-hike-plusoft.user.js
 // @updateURL    https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/script-hike-plusoft.user.js
 // @grant        none
@@ -99,7 +99,7 @@
             const botaoComent = document.querySelector('button[uib-tooltip="Comentários"]');
             if (botaoComent) {
                 botaoComent.click();
-                console.log("Botão 'Comentários' clicado via observer.");
+                //console.log("Botão 'Comentários' clicado via observer.");
                 observer.disconnect();
             }
         });
@@ -312,6 +312,17 @@
         setTimeout(PaginaChamado, 5000);
         return;
     }
+
+    /*  FECHA MENU ESQUERDO
+    // ================================================== */
+    const hideMenu = new MutationObserver(() => {
+        const tooggle = document.querySelector('a.mainnav-toggle');
+        if (tooggle) {
+            tooggle.click();
+            hideMenu.disconnect();
+        }
+    });
+    hideMenu.observe(document.body, { childList: true, subtree: true });
 
     /*  SCROLL SUAVE
     // ================================================== */
