@@ -1,26 +1,76 @@
 // ==UserScript==
-// @name         HIKE - Página Chamado
+// @name         HIKE
 // @description  Melhorias na interface do HIKE
-// @version      2025.09.12
+// @version      2026.02.10
 // @author       MakotoWatanabe
-// @include      https://plusoft-itsm.inpaas.com/forms-v2/bpmruntime.userflows.forms.bpm_workflow_*
 // @icon         https://hikeplatform.com/wp-content/themes/area-structure-1/assets/images/favicon.png
+// @match        https://plusoft-itsm.inpaas.com/forms-v2/*
 // @downloadURL  https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/script-hike-plusoft.user.js
 // @updateURL    https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/script-hike-plusoft.user.js
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
 
-/* 14/11 */
-
-(function() {
+(function () {
     'use strict';
-    const $ = window.jQuery; // Assign jQuery to the $ variable
+    const $ = window.jQuery;
+    const url = window.location.href;
 
+    /* WORKFLOW
+    ========================= */
+    function PaginaWorkflow() {
 
-    /* FUNCAO DE VERIFICAR O CHAMADO
-    // ------------------------------------------------- */
-    function verificaChamado() {
+        /* Arruma o tamanho das colunas do bootstrap
+        // -------------------------------------------- */
+
+        // colunas dos Campos de busca e filtro
+        const Campobusca = document.querySelector('.finder-desk');
+        if (Campobusca) {
+            const altera1 = Campobusca.querySelectorAll('.row:nth-child(1)>div:nth-child(1)');
+            altera1.forEach(element => {
+                element.classList.remove('col-sm-6');
+                element.classList.remove('col-md-4');
+                element.classList.add('col-sm-2');
+            });
+            const altera2 = Campobusca.querySelectorAll('.row:nth-child(1)>div:nth-child(2)');
+            altera2.forEach(element => {
+                element.classList.remove('col-sm-6');
+                element.classList.remove('col-md-4');
+                element.classList.add('col-sm-6');
+            });
+            const altera3 = Campobusca.querySelectorAll('.row:nth-child(1)>div:nth-child(3)');
+            altera3.forEach(element => {
+                element.classList.remove('col-sm-6');
+                element.classList.remove('col-md-4');
+                element.classList.add('col-sm-4');
+            });
+
+            const altera4 = Campobusca.querySelectorAll('.row:nth-child(2)>div:nth-child(1)');
+            altera4.forEach(element => {
+                element.classList.remove('col-sm-4');
+                element.classList.add('col-sm-12');
+                element.style.removeProperty("margin");
+            });
+
+            const filtroIcone = Campobusca.querySelectorAll('.mar-btm');
+            filtroIcone.forEach(element => {
+                element.classList.remove('mar-btm');
+            });
+
+        }
+
+        // Botão verde de novo chamado
+        const botaoNovoChamado = document.querySelectorAll('.page-actions.pull-right.pad-rgt');
+        botaoNovoChamado.forEach(element => {
+            element.classList.remove('pull-right');
+            element.classList.remove('pad-rgt');
+        });
+
+    }
+
+    /* CHAMADO
+    ========================= */
+    function PaginaChamado() {
 
         /* Busca as informações no chamado
         // -------------------------------------------- */
@@ -56,10 +106,8 @@
 
         observer.observe(document.body, { childList: true, subtree: true });
 
-        const botaoAncora = '<div class="JSbotaoAncora"><a href="#mainForm" onclick="clicaComent();"><i class="fa fa-chevron-circle-up"></i></a><a href="#editor"><i class="fa fa-comment"></i></a></div>';
+        const botaoAncora = '<div class="JSbotaoAncora"><a href="#mainForm"><i class="fa fa-chevron-circle-up"></i></a><a href="#editor-comentario"><i class="fa fa-comment"></i></a></div>';
         RenderizaFlutuante.insertAdjacentHTML("afterbegin", botaoAncora);
-
-
 
 
 
@@ -119,27 +167,63 @@
 
 
 
-        /* Arruma o bootstrap
+        /* Arruma o tamanho das colunas do bootstrap
         // -------------------------------------------- */
-        function ArrumaBootstrap() {
-            // achar uma forma de fazer if else para entender onde o control label está
-            // esse script funciona para os formularios, porem quebra o checkbox
-            // SE control-label é uma questão, usar tamanho col-sm-2.
-            // SE control-label é um checkbox, usar tamanho col-sm-10.
+        function ArrumaBootstrap1(callback) {
 
-            //const divs1 = document.querySelectorAll('.col-xs-12.col-sm-4.control-label');
-            //divs1.forEach(element => {
-            //    element.classList.remove('col-sm-4');
-            //    element.classList.add('col-sm-2');
-            //});
-
-            const divs2 = document.querySelectorAll('.col-xs-12.col-sm-5');
-            divs2.forEach(element => {
+            const arruma1 = document.querySelectorAll('.form-group>label:nth-child(1)');
+            arruma1.forEach(element => {
+                element.classList.remove('col-xs-12');
+                element.classList.remove('col-sm-4');
+                element.classList.add('col-sm-2');
+            });
+            const arruma2 = document.querySelectorAll('.form-group>div.col-xs-12.col-sm-5');
+            arruma2.forEach(element => {
+                element.classList.remove('col-xs-12');
                 element.classList.remove('col-sm-5');
+                element.classList.add('col-sm-10');
+            });
+            const arruma3 = document.querySelectorAll('.form-group>div.col-xs-12.col-sm-8');
+            arruma3.forEach(element => {
+                element.classList.remove('col-xs-12');
+                element.classList.remove('col-sm-8');
+                element.classList.add('col-sm-10');
+            });
+
+            const ColunaSizeHistory = document.querySelectorAll('.col-md-11.hidden-xs');
+            ColunaSizeHistory.forEach(element => {
+                element.classList.remove('col-md-11');
+                element.classList.add('col-sm-12');
+            });
+
+            callback();
+        }
+        function ArrumaBootstrap2() {
+            const altera1 = document.querySelectorAll('.field-checkbox>label');
+            altera1.forEach(element => {
+                element.classList.remove('col-sm-2');
+                element.classList.remove('col-sm-4');
                 element.classList.add('col-sm-8');
             });
+            const altera2 = document.querySelectorAll('.field-checkbox>div.col-sm-10');
+            altera2.forEach(element => {
+                element.classList.remove('col-sm-10');
+                element.classList.add('col-sm-4');
+            });
+            const altera3 = document.querySelectorAll('.col-xs-12.col-sm-6>.field-string>label');
+            altera3.forEach(element => {
+                element.classList.remove('col-sm-2');
+                element.classList.remove('col-sm-4');
+                element.classList.add('col-sm-8');
+            });
+            const altera4 = document.querySelectorAll('.col-xs-12.col-sm-6>.field-string>div.col-sm-10');
+            altera4.forEach(element => {
+                element.classList.remove('col-sm-10');
+                element.classList.add('col-sm-4');
+            });
+
         }
-        ArrumaBootstrap();
+        ArrumaBootstrap1(ArrumaBootstrap2);
 
 
 
@@ -151,7 +235,8 @@
             /* SE hora alocada for vazio
             // -------------------------------------------- */
             if (HoraAlocada === '') {
-                const popVerificaHoras = '<div class="JSverificaHora" role="alert">O campo <strong>Horas alocadas</strong> está vazio!</div>';
+                //const popVerificaHoras = '<div class="JSverificaHora" role="alert">O campo <strong>Horas alocadas</strong> está vazio!</div>';
+                const popVerificaHoras = '<div class="alert alert-warning alert-dismissible JSverificaHora" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Atenção!</strong> Preencha o campo horas alocadas.</div>';
                 RenderizaFlutuante.insertAdjacentHTML("afterend", popVerificaHoras);
             }
         }
@@ -178,6 +263,8 @@
                 for (let cri = 0; cri < ItensVinculado.length; cri++) {
                     ItensVinculado[cri].click();
                 }
+
+
             }
             else if (inputPrefixo.includes("CAMP-")) {
                 /* Define hora alocada
@@ -210,12 +297,24 @@
         verificaInputData();
 
 
+    }
 
-    } setTimeout(verificaChamado, 5000);
-
+    /* CHAVEAMENTO DE PAGINA
+    // ================================================== */
+    if (url.includes('/forms-v2/finder/BPM_WORKFLOW_')) {
+        console.log('PAGINA WORKFLOW');
+        PaginaWorkflow();
+        return;
+    }
+    if (url.includes('/forms-v2/bpmruntime.userflows.forms.bpm_workflow_')) {
+        console.log('PAGINA CHAMADO');
+        //PaginaChamado();
+        setTimeout(PaginaChamado, 5000);
+        return;
+    }
 
     /*  SCROLL SUAVE
-    // ------------------------------------------------- */
+    // ================================================== */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -226,5 +325,4 @@
         });
     });
 
-})
-();
+})();
