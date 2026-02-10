@@ -1,17 +1,17 @@
 /* ==UserStyle==
-@name			Hike
-@namespace		PLUSOFT
-@version		2025.12.09
-@author			@MakotoWatanabe <fernandomakoto@plusoft.com>
-@description	Ajustes e melhorias para plataform Plusoft Hike
-@downloadURL	https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/css-hike-plusoft.css
-@updateURL		https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/css-hike-plusoft.css
-@homepageURL	https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/css-hike-plusoft.css
+@name				Hike
+@namespace			PLUSOFT
+@version			2026.02.10
+@author				@MakotoWatanabe <fernandomakoto@plusoft.com>
+@description		Ajustes e melhorias para plataform Plusoft Hike
+@homepageURL		https://userstyles.world/api/style/22878/
+@updateURL			https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/css-hike-plusoft.css
 ==/UserStyle== */
 
 
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 
 @-moz-document domain("plusoft-itsm.inpaas.com") {/* GERAL */
 	
