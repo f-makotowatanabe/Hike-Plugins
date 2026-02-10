@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name			Hike
 @namespace		PLUSOFT
-@version		2025.09.12
+@version		2026.02.19
 @author			@MakotoWatanabe <fernandomakoto@plusoft.com>
 @description	Ajustes e melhorias para plataform Plusoft Hike
-@updateURL		https://userstyles.world/api/style/22878.user.css
-@homepageURL	https://userstyles.world/api/style/22878/
+@updateURL		https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/css-hike-plusoft.css
+@homepageURL	https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/css-hike-plusoft.css
 ==/UserStyle== */
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -25,13 +26,11 @@
 
         ::-webkit-scrollbar-thumb {
             background:#444 !important;
-            /*background: linear-gradient(#21d4fd, #b721ff) !important;*/
             border-radius: 100px;
         }
 		
 		scrollbar-color: #999 transparent;
 	
-
 		--gray-50: #080808;
 		--gray-75: #1a1a1a;
 		--gray-100: #1e1e1e;
@@ -63,7 +62,8 @@
 		--green-500: #2d9d78;
 		--green-600: #33ab84;
 		--green-700: #39b990;
-		--celery-700: #51d267;
+		--green-800: #51d267;
+		--green-900: #4aba64;
 
 		--indigo-100: #1A1D61;
 		--indigo-1000: #AEB1FF;
@@ -71,8 +71,11 @@
 
 	}	
 	
+	body {
+		font-size:11px;
+	}
 	
-	/* LODING */
+/* LODING */
 	.loadwait {
 		padding-top: initial;
 		background: rgba(0,0,0,0.9);
@@ -84,7 +87,7 @@
 	.loadwait .wait-icon {display:none}
 
 	
-	/* CORPO */
+/* CORPO */
 	HTML,body {
 		margin:0 !important;
 		padding:0 !important;
@@ -100,7 +103,7 @@
 		font-family: "Open Sans", sans-serif;
 	}
 
-	/* MENU ESQUERDO */
+/* MENU ESQUERDO */
 	#mainnav-container {
 		padding: 0
 	}
@@ -130,16 +133,16 @@
 		content:"\f04f"
 	}
 
-	/* RELOGINHO */
+/* RELOGINHO */
 	.sticky-brand-icon {
 		top: calc(100vh - 0px);
 	}
 	.sticky-brand-icon li {
 		margin-bottom: 0 !important;
 	}
-
 	
-	/* LOGO */
+	
+/* LOGO */
 	/*invisivel*/
 	.navbar-header::before {
 		background-color: var(--gray-900);
@@ -150,7 +153,7 @@
 	}
 
 	
-	/* NAVBAR PRINCIPAL */
+/* NAVBAR PRINCIPAL */
 	.navbar-content {
 		background-color: var(--gray-75);
 		color: var(--gray-800);
@@ -163,7 +166,7 @@
 	}
 
 	
-	/* PERFIL - box que abre */
+/* PERFIL - box que abre */
 	.navbar-top-links .head-list li a {
 		color: var(--gray-900) !important;
 	}
@@ -175,7 +178,7 @@
 	}
 	
 
-	/* BUSCA GERAL */
+/* BUSCA GERAL */
 	.search-wrapper .search-input,
 	.navbar-content .custom-search-form input{
 		background-color: var(--gray-200) !important;
@@ -183,7 +186,7 @@
 	.navbar-content .custom-search-form input:focus {
 		border: 1px solid var(--gray-500) !important;
 	}
-	/* BUSCA GERAL - box que abre */
+/* BUSCA GERAL - box que abre */
 	.navbar-content .panel.container-search-record,
 	.navbar-content .dropdown-menu {
 		background-color:  var(--gray-75);
@@ -204,7 +207,7 @@
 	
 
 	
-	/* BUSCA PAINEL*/
+/* BUSCA PAINEL*/
 	.form-control.input-search,
 	.form-control.input-search-finder {
 		background-color: var(--gray-100);
@@ -230,17 +233,22 @@
 	.field-wrapper .composeSearch-composition input.form-control {
 		background-color: var(--gray-100);
 		margin-left: 40px !important;
+		color: var(--gray-900);
 	}
 	
 	.field-wrapper .dropdown-menu {
 		background-color: var(--gray-75);
+		border-color: var(--gray-400);
 	}
 	.field-wrapper .dropdown-menu a {
 		color: var(--gray-900);
 	}
+	.arrow-to-submenu {
+		padding: 10px 10px 0 0 !important;
+	}
 
 
-	/* TABELAS */
+/* TABELAS */
 	.table thead th {
 		background-color: transparent;
 	}
@@ -276,8 +284,9 @@
 	
 
 	
-	/* PAGINATION */
+/* PAGINATION */ 
 	.pagination {
+		padding:0 !important;
 		border: 1px solid var(--gray-200) !important;
 		background-color: var(--gray-50) !important;
 	}
@@ -298,85 +307,57 @@
 		border: 0 !important;
 		color: var(--gray-300) !important;
 	}
+	
 
 
-	/* FOOTER */
+/* FOOTER */
 	.footer {
 		display: none
 	}
-
-
-}
-
-@-moz-document url("https://plusoft-itsm.inpaas.com/#!/pending") {/* ABA MINHAS PENDENCIAS */
 	
-	#page-content {
-		padding: 0 30px!important
-	}
-	#content-container {
-		padding-bottom: 0!important
-	}
+	
+	/* pre visualizador de img */
+	#imageview {max-height: initial !important;}
 
-	#page-head {
-		display: none
-	}
 
-	#panel-network {
-		background-color: initial !important;
-	}
-
-	/* LABEL */
-	span.label-danger {
-		background-color: transparent;
-		border: 1px solid var(--red-400);
-		color: var(--red-400) !important;
-	}
-	span.label-warning {
-		background-color: transparent;
-		border: 1px solid var(--orange-400);
-		color: var(--orange-400) !important;
-	}
-	span.label-success {
-		background-color: transparent;
-		border: 1px solid var(--celery-700);
-		color: var(--celery-700) !important;
-	}
 }
 
 
-@-moz-document url("https://plusoft-itsm.inpaas.com/#!/home") {/*ABA VISÃO GERAL*/
+@-moz-document url("https://plusoft-itsm.inpaas.com/forms/bpm.static.forms.pages.pendingissues") {/* ABA MINHAS PENDENCIAS */
+	
 	.panel{
 		background-color: var(--gray-100);
 	}
-	.text-primary, a.text-primary:hover, a.text-primary:focus {
-  		color: var(--gray-900);
+	
+	
+	
+	.media-body {
+		background: var(--gray-200);
 	}
-	.text-main, a.text-main:hover, a.text-main:focus {
-	  	color: var(--gray-900);
-	}
-	#container .table th {
+	.media-body p {
 		color: var(--gray-900);
 	}
 	
-	.my-dashboard {
-		display:none
+	.btn-default{
+		background-color: var(--gray-100);
+		border-color: var(--gray-200) !important;
+		color: #7a878e;
 	}
 	
-	.dropdown-menu {
-		background-color: var(--gray-100);
-		border: 1px solid var(--gray-300);
+	#table-record .table > tbody:nth-of-type(2n+1) > tr > td {
+		background: var(--gray-200);
 	}
-	.dropdown-header {
-		color: var(--gray-600);
+	#table-record .table > tbody:nth-of-type(2n+1) > tr > td {
+		background: var(--gray-200);
 	}
-	.dropdown-menu .divider {
-		background-color: var(--gray-300);
+	.table > tbody.item-late > tr > td {
+		background-color: rgba(255, 199, 199, 0.41) !important;
 	}
-	.btn-default {
-		background-color: var(--gray-200) !important;
-		border-color: var(--gray-400) !important;
-	}
+
+
 }
+
+
 @-moz-document url("https://plusoft-itsm.inpaas.com/#!/workflows") {/* ABA PROCESSOS */
 
 	/* CONTENT */
@@ -487,486 +468,9 @@
 	}
 }
 
-@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/BPM_WORKFLOW_"), url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/HIKE_") {/* KANBAN e LIST */
-
-	.row.ng-scope {margin:0 !important; padding:0 !important}
-	
-	#page-title {
-		display: none;
-	}
-	
-	/* Botão novo chamado*/
-	.page-actions {
-		position:absolute;
-		padding: 0 !important;
-		top: 20px;
-		right: 300px;
-		z-index:1;
-	}
-	.btn.btn-labeled {
-		padding: 6px;
-		margin:0;
-	}
-	.btn.btn-labeled .btn-label {
-		border: none;
-		width: initial;
-		line-height: initial !important;
-		margin: initial;
-	}
-	.btn.btn-labeled span {
-		display:none;
-	}
-	
-	/* Seletor de filtros */
-	.input-group.finder-container select {
-		max-width: 300px;
-	}
-	
-	
-	.panel {
-		background-color: initial;
-		margin-bottom: 0 !important;
-	}
-	
-	
-	/* KANBAN - Modo cards */
-	#view-layout {
-		background-color: transparent !important;
-	}
-	
-	#KanbanViewController,
-	#kanbanContainer {
-		margin: 0 !important;
-	}
-	
-	#KanbanViewController {
-		height: calc(100vh - 120px) !important;
-	}
-	
-	
-
-	/* KANBAN - seletor de workflow */
-	.kanban-summary {
-		background-color: transparent !important;
-		padding:0 !important;
-		display: none;
-	}
-	.kanban-summary select {
-		text-transform: uppercase;
-	}
-	
-	
-	
-	/* KANBAN - header de coluna do workflow */
-	#headerKanban {
-		background-color: var(--gray-50) !important;
-	}
-	#headerKanbanItemStep {
-		border-top-width: 1px !important
-	}
-	
-	#headerInformation {
-		background-color: var(--gray-200) !important;
-		height: auto !important;
-		padding: 10px !important;
-	}
-	#headerInformation .open > .sortTitle {
-		padding: 1px 2px;
-		background-color: var(--gray-75);
-	}
-	
-	.titleTask-primary {
-		border-top-color: var(--gray-700) !important;
-	}
-	.titleTask-succses {
-		border-top-color: var(--celery-700) !important;
-	}
-	.titleTask-danger {
-		border-top-color: var(--red-400) !important;
-	}
-	@media (min-width: 768px) {
-		.titleTask-primary{
-			background-color: transparent;
-		}
-	}
-	
-	/* KANBAN - Campo de busca */
-	#headerKanbanCol {
-		position: relative
-	}
-	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] {
-		position: absolute;
-		z-index: 1;
-		top: 4px;
-		left: 10px;
-		width: 190px;
-		background: initial !important ;
-		border: initial !important
-	}
-	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group {
-		margin: 0
-	}
-	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group div {
-		top: 5px !important;
-		right: 5px !important;
-	}
-	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group input {
-		color: var(--gray-900);
-		background-color: var(--gray-75);
-	}
-	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group input::placeholder  {
-		color: var(--gray-600) !important;
-	}
-	
-	
-	/* KANBAN - Coluna do workflow */
-	#cardsKanban {
-		height: calc(100vh - 162px) !important;
-		padding-top: 2px;
-		overflow: auto;
-	}
-	#col {
-		overflow: auto;
-		padding: 10px;
-		background-color: var(--gray-100);
-	}
-	.tasklist {
-		background-color: initial;
-		border-radius: 0;
-		padding: 0;
-	}
-	
-	
-	
-	/* KANBAN - Estilo do cartão */
-	.task-card {
-		box-shadow: initial !important;
-		margin: 0;
-		border-radius: 6px;
-		border:1px solid var(--gray-400);
-		background-color: var(--gray-200);
-		padding: 0 10px 10px 10px;
-		margin-bottom: 15px;
-	}
-	
-	@media (min-width: 768px) {
-		.containerCards {
-		padding: unset;
-		}
-	}
-	.containerCards {
-		border-radius: 8px;
-		position: relative;
-		cursor: grab !important;
-	}
-	
-	.containerCards .text-main {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		margin:0;
-	}
-	
-	/* KANBAN - btn editar do card */
-	.containerCards .dropdown {
-		display:none
-	}
-	.containerCards:hover .dropdown {
-		display:block
-	}
-	.containerCards .dropdown .sortCard {
-		position: absolute !important;
-		right: 5px !important;
-		top: 5px !important;
-		padding:5px !important;
-		max-width: initial !important;
-		border:0;
-		background-color:var(--gray-100);
-	}
-	.containerCards .dropdown.open .sortCard::before {
-		position: absolute !important;
-		right: 0 !important;
-		top: 0 !important;
-		background-color:var(--gray-500);
-		padding: 5px !important;
-	}
-
-	.containerCards .dropdown .dropdown-menu {
-		top: 20px !important;
-		right: 20px !important;
-		left: initial !important;
-	}
-	
-	.containerCards .dropdown.open .dropdown-menu {
-		border:1px solid var(--gray-500);
-		border-radius: 5px;
-	}
-	
-	.containerCards .dropdown.open .dropdown-menu > li {
-		background-color: var(--gray-100);
-	}
-
-	/* KANBAN - Linhas do card */
-	.containerCards div.ng-scope {
-		display: block !important;
-		width: 100%;
-		justify-content: normal !important;
-	}
-	.containerCards div.ng-scope div:first-child {
-		width: 100% !important;
-		display: block !important;
-		margin-top: 6px;
-	}
-
-	.containerCards div.ng-scope div:last-child {
-		width: 100% !important;
-		display: block !important;
-	}
-	
-	.containerCards div.ng-scope div span {
-		white-space: initial !important;
-		display: initial !important;
-		justify-content: unset !important;
-		float: none !important;
-		color: var(--gray-600) !important;
-	}
-	.containerCards div.ng-scope div:first-child span.ng-binding {
-		font-size: 10px !important;
-		font-weight: normal !important;
-	}
-
-	.containerCards div.ng-scope div span.ng-binding.ng-scope {
-		color: var(--gray-900) !important;
-		font-size: 14px !important;
-		font-weight: 600 !important;
-		word-break: break-word;
-	}
-	
-	.containerCards div.ng-scope div:has(span.ng-binding.ng-scope) {
-		padding-bottom: 3px;
-		border-bottom:1px dashed var(--gray-400)
-	}
-	
-	.containerCards div.ng-scope div span[title="Tipo de demanda"],
-	.containerCards div.ng-scope div span[title="Tipo de ação"],
-	.containerCards div.ng-scope div span[title="Tipo"] {
-		display: none !important;
-	}
-
-	/* KANBAN - tag de status da demanda */
-	.box-inline .label {
-		font-size: 10px;
-		padding: 2px;
-	}
-	.box-inline .label.label-warning {
-		background-color: var(--gray-100);
-		color: var(--gray-900);
-	}
-	.box-inline .label.label-success {
-		background-color: var(--celery-700);
-		color: var(--gray-50);
-	}
-	
-	/* KANBAN - linha do card status */
-	.containerCards > div.ng-scope div span[title="A fazer"]:before {
-		font-family: FontAwesome;
-		content: "\f111";
-		font-size: 16px;
-		padding:0 4px;
-		color: var(--gray-500);
-	}
-	.containerCards > div.ng-scope div span[title="Em análise"]:before,
-	.containerCards > div.ng-scope div span[title="Em ajuste"]:before,
-	.containerCards > div.ng-scope div span[title="Em análise"]:before,
-	.containerCards > div.ng-scope div span[title="Em ajuste"]:before {
-		font-family: FontAwesome;
-		content: "\f111";
-		font-size: 16px;
-		padding:0 4px;
-		color: var(--gray-900);
-	}
-	.containerCards > div.ng-scope div span[title="Em andamento"]:before,
-	.containerCards > div.ng-scope div span[title="Validação do disparo"]:before,
-	.containerCards > div.ng-scope div span[title="Disparo"]:before {
-		font-family: FontAwesome;
-		content: "\f0a9";
-		font-size: 16px;
-		padding:0 4px;
-		color: var(--green-700);
-	}
-	.containerCards > div.ng-scope div span[title="Em aprovação"]:before,
-	.containerCards > div.ng-scope div span[title="Aguardando área resolvedora"]:before {
-		font-family: FontAwesome;
-		content: "\f111";
-		font-size: 16px;
-		padding:0 4px;
-		color: var(--orange-700);
-	}
-	.containerCards > div.ng-scope div span[title="Concluído"]:before {
-		font-family: FontAwesome;
-		content: "\f058";
-		font-size: 16px;
-		padding:0 4px;
-		color: var(--celery-700);
-	}
-	.containerCards > div.ng-scope div span[title="Cancelado"]:before {
-		font-family: FontAwesome;
-		content: "\f2d3";
-		font-size: 16px;
-		padding:0 4px;
-		color: var(--red-600);
-	}
-
-	/* KANBAN - Linha tipo de demanda */
-	.dropdownlabelCustom.label {
-		border: none !important;
-		font-size: 10px !important;
-		font-weight: 600 !important;
-		padding: 0 3px !important;
-		margin: 0;
-		border-radius: 0;
-	}
-	.dropdownlabelCustom.label[title="Ação pontual"] {
-		background-color: var(--gray-400) !important;
-		color: var(--orange-700) !important;
-	}
-	.dropdownlabelCustom.label[title="Jornada"] {
-		background-color: var(--gray-400) !important;
-		color: var(--celery-700) !important;
-	}
-	.dropdownlabelCustom.label[title="Texto"] {
-		background-color: var(--gray-400) !important;
-		color: var(--red-700) !important;
-	}
-	.dropdownlabelCustom.label[title="Layout"] {
-		background-color: var(--gray-400) !important;
-		color: var(--orange-700) !important;
-	}
-	.dropdownlabelCustom.label[title="HTML"] {
-		background-color: var(--gray-400) !important;
-		color: var(--celery-700) !important;
-	}
-	.dropdownlabelCustom.label[title="Revisão"] {
-		background-color: var(--gray-400) !important;
-		color: var(--gray-900) !important;
-	}
-	.dropdownlabelCustom.label[title="Ajuste"],
-	.dropdownlabelCustom.label[title="Suporte"],
-	.dropdownlabelCustom.label[title="Extração"]{
-		background-color: var(--gray-50) !important;
-		color: var(--gray-900) !important;
-	}
-	.dropdownlabelCustom.label[title="Suporte"] {
-		background-color: var(--gray-900) !important;
-		color: var(--gray-100) !important;
-	}
-	
-	/* KANBAN - mini visor de scroll */
-	.scrollKanbanDiv {
-		height: 15px;
-		background-color: var(--gray-300);
-		position:absolute;
-		bottom:10px;
-		right: calc(100vw - 55%);
-		opacity: 0.3;
-		transition: opacity 0.2s ease-in-out;
-	}
-	.scrollKanbanDiv:hover {
-		opacity: 1;
-	}
-	.scrollKanbanColumn {
-		height: 8px;
-		background-color: var(--gray-50)
-	}
-	.scrollKanbanSquareCursorMove {
-		border: 2px solid var(--gray-600);
-	}
-	
 
 
-	/* MODAL - registro de tarefa */
-	:has(.sliderOpen) #KanbanViewController #kanbanContainer {
-		display: none !important
-	}
-	.sliderOpen {
-		width: 100%;
-		transition-property: none !important;
- 		transition-duration: unset !important;
-	}
-	#page-slide-btn{
-		background-color: var(--gray-900) !important;
-		color: var(--gray-100) !important;
-		border-radius: 0px!important;
-		left: 0;
-		top: 10px;
-		padding: 0;
-	}
-	
-	#page-slide-btn i{
-		transform: rotate(45deg);
-		font-size:20px;
-	}
-	
-	#page-slide-btn i:after {left: 7px; top: 12px;}
-	#page-slide-btn i:before {left: 14px; top: 19px;}
-	
-	
-	
-	
-	/* LISTA modo tabela */
-	.finder-table .label-success,
-	.finder-table .label-danger,
-	.finder-table .label-warning,
-	.finder-table .label-primary,
-	.finder-table .label-default {
-		background-color: transparent !important;
-		color: var(--gray-800) !important;
-		display: initial; 
-	}
-	
-	.finder-table span[uib-tooltip="Em andamento"]{
-		color: var(--celery-700) !important;
-	}
-	
-	.finder-table span[uib-tooltip="Em aprovação"]{
-		color: var(--orange-400) !important;
-	}
-	
-	.table-striped > tbody > tr:nth-child(2n+1) {
-		background-color: var(--gray-75) !important;
-	}
-	
-	.table-striped > tbody > tr[style="background-color: rgba(255, 199, 199, 0.41);"] {
-		background-color: rgba(255, 0, 0, .2) !important;
-	}
-	
-	#container-list {
-		height: calc(100vh - 180px);
-	}
-	
-	#finder-list-table thead {
-		position: sticky;
-		top: 0;
-		background-color: var(--gray-50);
-	}
-}
-
-
-@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/BPM_WORKFLOW_5BC3C6") {/* KANBAN C/SELETOR */
-
-	/* KANBAN - Seletor de fluxo */
-	.kanban-summary {
-		display:block
-	}
-	#cardsKanban {
-		height: calc(100vh - 205px) !important;
-	}
-
-
-}
-
-
-@-moz-document /*url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/BPM_WORKLOG"),*/url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpm.worklog.forms.bpm_worklog"), url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpmruntime.userflows.forms.bpm_workflow_") {/* PAGINA CHAMADO */
+@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/#!/dynamiciframe?link=bpmruntime.userflows.forms.bpm_workflow_"),url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpm.worklog.forms.bpm_worklog"), url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpmruntime.userflows.forms.bpm_workflow_") {/* PAGINA CHAMADO */
 	
 	.container-fluid {
 		margin: 0!important;
@@ -974,7 +478,7 @@
 	}
 	
 	#mainForm {
-		max-width: 1200px;
+		max-width: 1500px;
 		margin: 0 auto;
 		padding: 15px 80px !important;
 	}
@@ -983,15 +487,20 @@
 			padding: unset;
 		}
 	}
+	
+	.finder-container {
+		height: calc(100vh - 60px);
+		overflow: hidden;
+	}
+	
+	/*box header*/
 	.page-text-header {
-		position: sticky;
-		top: 0;
-		z-index: 11;
 		background-color: var(--gray-75);
 		padding: 10px !important;
 		border-bottom: 1px solid var(--gray-500);
 	}
 	
+	/*Titulo da pagina com nome da area*/
 	.page-header-h1 {
 		position:relative;
 		padding: initial;
@@ -1021,18 +530,20 @@
 		background-color: var(--gray-100);
 	}
 	
-	h5 {
+	.panel {
+		background-color: transparent!important;
+		border:0;
+	}
+	.panel-heading,
+	.panel-body {
+		background-color: var(--gray-75);
+	}
+	
+	.panel-heading h5 {
 		color: var(--gray-900) !important;
 		font-weight: 600 !important;
 		font-size: 20px !important;
 	}
-	
-	.panel {
-		background-color: var(--gray-75) !important;
-		border:0;
-		border-radius:10px;
-	}
-	
 	
 	.mainWrapperFields > :first-child,
 	.widget-box.widget-well .panel-heading,
@@ -1046,12 +557,20 @@
 		border-radius: 0;
 		background-color: var(--gray-75) !important;
 		border:0;
+		margin:0;	
 	}
 	.widget-box.widget-well .panel-title,
 	.widget-box.widget-well .widget-header h5 {
 		color: var(--gray-900) !important;
 		font-weight: 600 !important;
 		font-size: 18px !important;
+	}
+	
+	.btn-info {
+		background-color: var(--blue-400) !important;
+	}
+	.btn-info:hover {
+		background-color: var(--blue-600) !important;
 	}
 	
 	
@@ -1116,7 +635,54 @@
 		background: initial;
 	}
 	.bootstrap-datetimepicker-widget {
-		background: var(--gray-75) !important;
+		background-color: var(--gray-75) !important;
+	}
+	
+	/* STATUS BREADCRUMB */
+	#FieldsetSeekBox .step-default {
+		background: var(--gray-200) !important;
+	}
+	#FieldsetSeekBox .step-default::after {
+		border-left-color: var(--gray-200) !important;
+	}
+	#FieldsetSeekBox .step-active {
+		background: var(--blue-400) !important;
+	}
+	#FieldsetSeekBox .step-active::after {
+		border-left-color: var(--blue-400) !important;
+	}
+	#FieldsetSeekBox .step-check {
+		background: var(--green-800) !important;
+	}
+	#FieldsetSeekBox .step-check::after {
+		border-left-color: var(--green-800) !important;
+	}
+	#FieldsetSeekBox .step-canceled {
+		background: var(--red-400) !important;
+	}
+	#FieldsetSeekBox .step-canceled::after {
+		border-left-color: var(--red-400) !important;
+	}
+	.popover {
+		border-color: var(--gray-500);
+		background-color: var(--gray-500);
+	}
+	.popover-content {
+		background-color: var(--gray-100);
+	}
+	.popover-content .bg-default{
+		background: unset !important;
+	}
+	.popover-content .bg-active {
+		background: var(--gray-50) !important;
+	}
+	.popover-content .title-span-dropdown {
+		font-size:unset;
+		color: var(--gray-700);
+	}
+	.popover-content .subtitle-span-dropdown {
+		font-size:14px;
+		color: var(--gray-900);
 	}
 	
 	
@@ -1130,25 +696,20 @@
 	
 	
 	
-	/* BOX COMENTARIOS */
+	/* BOX PARA INPUT DE COMENTARIOS */
 	.ql-toolbar,
 	.ql-container,
 	.dropzone-label {border-color: var(--gray-400) !important;}
 	
+	.ql-container .ql-editor.ql-blank::before {
+		color: var(--gray-700) !important;
+		padding-left:15px;
+	}
 	
 	.ql-container {
 		font-family: inherit;
 		background-color: var(--gray-200) !important;
-	}
-	
-	.ql-container .ql-editor::before {
-		color: var(--gray-700) !important;
-	}
-	
-	.ql-container .ql-editor {
 		font-size: 16px;
-	  	line-height: 1.45;
-		padding: 15px;
 	}
 	
 	.ql-container .ql-editor ol,
@@ -1161,8 +722,25 @@
 	.ql-container .ql-editor p {
 		color: var(--gray-900);
 		margin-bottom: 15px !important;
+		word-break: break-word;
 	}
-	.ql-container .ql-editor p > strong {font-weight: 600; color: var(--gray-900)}
+	.ql-container .ql-editor h1,
+	.ql-container .ql-editor h2{
+		background-color: var(--gray-300);
+	}
+	.ql-container .ql-editor h1 {
+		padding: 10px 15px;
+		border-radius: 10px;
+	}
+	.ql-container .ql-editor p > strong {
+		font-weight: 600;
+		color: var(--gray-900)
+	}
+	
+	/*.ql-container .ql-editor p > span {
+		background-color: transparent !important;
+		color: var(--gray-900) !important
+	}*/
 	
 	.ql-container .ql-editor blockquote {
 		color: var(--gray-900);
@@ -1227,7 +805,7 @@
 	}
 	.searchable .div-search-input a {
 		color: var(--gray-900);
-		font-size: 13px;
+		font-size: 12px;
 	}
 	.searchable ul {
 		background-color: var(--gray-200);
@@ -1256,7 +834,8 @@
 	
 	
 	
-	/* COMENTARIOS */
+	/* COMENTARIOS DENTRO DO HISTORICO */
+
 	.timeline-audit {
 		margin: 0 !important;
 		padding: 0 !important;
@@ -1296,7 +875,7 @@
 	
 	.timeline-audit .timeline-audit-entry .timeline-audit-entry-inner .timeline-time > span {
 		display: inline-block;
-		font-size:16px !important;
+		font-size:12px !important;
 	}
 	.timeline-audit .timeline-audit-entry .timeline-audit-entry-inner .timeline-time > span:first-child {
 		padding-right:5px;
@@ -1337,13 +916,11 @@
 	.timeline-audit-label hr {
 		display: none
 	}
-	
-	.timeline-audit-label h2:first-of-type {
+	.timeline-audit-label > h2:first-of-type {
 		background-color: var(--gray-100);
 		border-radius: 10px;
 		padding:5px 20px;
 	}
-	
 	.timeline-audit-label h2 img {
 		width: 60px;
 		height: 60px;
@@ -1352,7 +929,6 @@
 		border:2px solid var(--gray-200);
 		padding:0
 	}
-	
 	.timeline-audit-label h2 span.name {
 		color: var(--gray-900);		
 	}
@@ -1461,6 +1037,11 @@
 	
 	
 	/* MODAL */
+	@media (min-width: 992px) {
+	  .modal-lg {
+		width: 980px;
+	  }
+	}
 	.modal-content {
 		background-color: var(--gray-50)
 	}
@@ -1497,6 +1078,7 @@
 		padding: 5px 0;
 		text-align: center;
 		font-weight: bold;
+		font-size:20px;
 	}
 	.JSverificaStatus {
 		float: left;
@@ -1507,12 +1089,12 @@
 	
 	.label-status {
 		margin: 0 5px;
-		padding: 4px 40px;
+		padding: 4px 23px;
 		color: var(--gray-900);
 		background-color: var(--gray-50);
 		border: 1px solid var(--gray-400);
 		text-transform: uppercase;
-		font-size: 16px;
+		font-size: 14px;
 		text-align: center;
 		font-weight: bold;
 		border-radius: 6px;
@@ -1520,7 +1102,7 @@
 	
 	.label-status:before{
 		font-family: FontAwesome;
-		font-size: 16px;
+		font-size: 14px;
 		padding-right: 12px;
 	}	
 	.label-status[title="A fazer"]:before{
@@ -1569,10 +1151,10 @@
 	
 	.JSverificaHora {
 		color: #f00;
-		border:1px solid #f00;
-		background-color: #470303;
-		font-size: 15px;
-		padding: 10px 20px;
+		border:1px solid #4d0202;
+		background-color: #2d0707;
+		font-size: 20px;
+		padding: 7px 20px;
 		margin: 20px 0 !important;
 		border-radius:8px;
 	}
@@ -1584,7 +1166,7 @@
 		width:50px;
 		text-align:center;
 		background-color: var(--gray-75);
-		font-size:25px;
+		font-size:22px;
 		line-height: 40px;
 		border-radius: 0 15px 15px 0 ;
 	}
@@ -1601,11 +1183,556 @@
 	
 }
 
-@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/static/finder/edit.html") {/* BUSCA */
 
-	/* BARRRA FILTRO */
-	.finder-edit .field-container {
+@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/BPM_WORKFLOW_"), url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/HIKE_") {/* KANBAN e LIST */
+
+	.row.ng-scope {margin:0 !important; padding:0 !important}
+	
+	
+			
+	.row-content-page-head > div:nth-child(1) {
+		display:none
+	}
+	
+	#page-head {
+		position:absolute;
+		bottom: 0;
+		width:100%;
+	}
+	
+	.page-actions {
+		padding: 0 !important;
+		position: absolute;
+		top: initial;
+		bottom:22px;
+		z-index: 3;
+		left: calc(100% - 50px)
+	}
+	.btn.btn-labeled {
+		padding: 6px;
+		margin:0;
+	}
+	.btn.btn-labeled .btn-label {
+		border: none;
+		width: initial;
+		line-height: initial !important;
+		margin: initial;
+	}
+	/*.btn.btn-labeled span {
+		display:none;
+	}*/
+	
+	.page-content .panel {
+		background-color: initial;
+		margin-bottom: 0 !important;
+	}
+/* Seletores de Busca e filtro */
+	
+	/* BUSCAR */
+	.finder-desk .field-wrapper {
+		/*background: var(--gray-75);*/
+		padding:initial;
+	}
+	.finder-desk .field-wrapper .icon-search-field {
+		display: initial;
+		position: absolute;
+		top: 8px;
+		padding-left:5px;
+	}
+	.finder-desk .field-wrapper #txt-finder-term {
+		margin-left:25px;
+	}
+	
+	/* FILTRAR */
+	.input-group.finder-container select {
+		max-width:unset;
+		width:90%;
+	}
+	
+	
+	
+	
+	
+	
+/* KANBAN - Modo cards */
+	#view-layout {
+		background-color: transparent !important;
+	}
+	
+	#KanbanViewController,
+	#kanbanContainer {
+		margin: 0 !important;
+	}
+	
+	#KanbanViewController {
+		height: calc(100vh - 120px) !important;
+	}
+	
+	
+	
+
+/* KANBAN - seletor de workflow */
+	.kanban-summary {
+		background-color: transparent !important;
+		padding:0 !important;
+		display: none;
+	}
+	.kanban-summary select {
+		text-transform: uppercase;
+	}
+	
+	
+	
+/* KANBAN - header de coluna do workflow */
+	@media (min-width: 768px) {
+		.theme-dark_full #headerKanban {
+			background-color: initial !important;
+		}
+	}
+	#headerKanban {
+		background-color: var(--gray-50) !important;
+	}
+	#headerKanbanItemStep {
+		border-top-width: 1px !important
+	}
+	
+	@media (min-width: 768px) {
+		.theme-dark_full #headerInformation {
+			background-color: var(--gray-200) !important;
+		}
+	}
+	
+	#headerInformation {
+		background-color: var(--gray-200) !important;
+		height: auto !important;
+		padding: 10px !important;
+	}
+	#headerInformation .open > .sortTitle {
+		padding: 1px 2px;
+		background-color: var(--gray-75);
+	}
+	
+	.titleTask-primary {
+		border-top-color: var(--gray-700) !important;
+	}
+	.titleTask-succses {
+		border-top-color: var(--celery-700) !important;
+	}
+	.titleTask-danger {
+		border-top-color: var(--red-400) !important;
+	}
+	@media (min-width: 768px) {
+		.titleTask-primary{
+			background-color: transparent;
+		}
+	}
+	
+/* KANBAN - Campo de busca da coluna */
+	#headerKanbanCol {
+		position: relative
+	}
+	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] {
+		position: absolute;
+		z-index: 1;
+		top: 4px;
+		left: 10px;
+		width: 190px;
+		background: initial !important ;
+		border: initial !important
+	}
+	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group {
+		margin: 0
+	}
+	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group div {
+		top: 5px !important;
+		right: 5px !important;
+	}
+	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group input {
+		color: var(--gray-900);
+		background-color: var(--gray-75);
+	}
+	#headerKanbanCol div[ng-show="fieldSearch.step == stage.step"] .form-group input::placeholder  {
+		color: var(--gray-600) !important;
+	}
+	
+	
+/* KANBAN - Coluna do workflow */
+	#cardsKanban {
+		height: calc(100vh - 162px) !important;
+		padding-top: 2px;
+		overflow: auto;
+	}
+	#col {
+		overflow: auto;
+		padding: 10px;
+		background-color: var(--gray-100);
+	}
+	.tasklist {
+		background-color: initial;
+		border-radius: 0;
+		padding: 0;
+	}
+	
+	
+	
+/* KANBAN - Estilo do cartão */
+	.task-card {
+		box-shadow: initial !important;
+		margin: 0;
+		border-radius: 6px;
+		border:1px solid var(--gray-400);
 		background-color: var(--gray-200);
+		padding: 0 10px 10px 10px;
+		margin-bottom: 15px;
+	}
+	
+	@media (min-width: 768px) {
+		.containerCards {
+			padding: unset;
+		}
+		.theme-dark_full .containerCards {
+			background-color: initial !important;
+		}
+	}
+	.containerCards {
+		border-radius: 8px;
+		position: relative;
+		cursor: grab !important;
+	}
+	
+	.containerCards .text-main {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin:0;
+	}
+	
+/* KANBAN - btn editar do card */
+	.containerCards .dropdown {
+		display:none
+	}
+	.containerCards:hover .dropdown {
+		display:block
+	}
+	.containerCards .dropdown .sortCard {
+		position: absolute !important;
+		right: 5px !important;
+		top: 5px !important;
+		padding:5px !important;
+		max-width: initial !important;
+		border:0;
+		background-color:var(--gray-100);
+	}
+	.containerCards .dropdown.open .sortCard::before {
+		position: absolute !important;
+		right: 0 !important;
+		top: 0 !important;
+		background-color:var(--gray-500);
+		padding: 5px !important;
+	}
+
+	.containerCards .dropdown .dropdown-menu {
+		top: 20px !important;
+		right: 20px !important;
+		left: initial !important;
+	}
+	
+	.containerCards .dropdown.open .dropdown-menu {
+		border:1px solid var(--gray-500);
+		border-radius: 5px;
+	}
+	
+	.containerCards .dropdown.open .dropdown-menu > li {
+		background-color: var(--gray-100);
+	}
+
+
+/* KANBAN - Linhas do card */
+	.containerCards div.ng-scope {
+		display: block !important;
+		width: 100%;
+		justify-content: normal !important;
+	}
+	.containerCards div.ng-scope div:first-child {
+		width: 100% !important;
+		display: block !important;
+		margin-top: 6px;
+	}
+
+	.containerCards div.ng-scope div:last-child {
+		width: 100% !important;
+		display: block !important;
+	}
+	
+	.containerCards div.ng-scope div span {
+		white-space: initial !important;
+		display: initial !important;
+		justify-content: unset !important;
+		float: none !important;
+		color: var(--gray-600) !important;
+	}
+	.containerCards div.ng-scope div:first-child span.ng-binding {
+		font-size: 10px !important;
+		font-weight: normal !important;
+	}
+
+	.containerCards div.ng-scope div span.ng-binding.ng-scope,
+	.containerCards div.ng-scope div a.ng-binding.ng-scope {
+		color: var(--gray-900) !important;
+		font-weight: 600 !important;
+		word-break: break-word;
+		float: none !important;
+	}
+	
+	.containerCards div.ng-scope div:has(span.ng-binding.ng-scope) {
+		padding-bottom: 3px;
+		border-bottom:1px dashed var(--gray-400)
+	}
+	
+	.containerCards div.ng-scope div span[title="Tipo de demanda"],
+	.containerCards div.ng-scope div span[title="Tipo de ação"],
+	.containerCards div.ng-scope div span[title="Tipo"] {
+		display: none !important;
+	}
+
+/* KANBAN - tag de status da demanda */
+	.box-inline .label {
+		font-size: 10px;
+		padding: 2px;
+	}
+	.box-inline .label.label-warning {
+		background-color: var(--gray-100);
+		color: var(--gray-900);
+	}
+	.box-inline .label.label-success {
+		background-color: var(--celery-700);
+		color: var(--gray-50);
+	}
+	
+/* KANBAN - linha do card status */
+	.containerCards > div.ng-scope div span[title="A fazer"]:before {
+		font-family: FontAwesome;
+		content: "\f111";
+		font-size: 16px;
+		padding:0 4px;
+		color: var(--gray-500);
+	}
+	.containerCards > div.ng-scope div span[title="Em análise"]:before,
+	.containerCards > div.ng-scope div span[title="Em ajuste"]:before,
+	.containerCards > div.ng-scope div span[title="Em análise"]:before,
+	.containerCards > div.ng-scope div span[title="Em ajuste"]:before {
+		font-family: FontAwesome;
+		content: "\f111";
+		font-size: 16px;
+		padding:0 4px;
+		color: var(--gray-900);
+	}
+	.containerCards > div.ng-scope div span[title="Em andamento"]:before,
+	.containerCards > div.ng-scope div span[title="Validação do disparo"]:before,
+	.containerCards > div.ng-scope div span[title="Disparo"]:before {
+		font-family: FontAwesome;
+		content: "\f0a9";
+		font-size: 16px;
+		padding:0 4px;
+		color: var(--green-700);
+	}
+	.containerCards > div.ng-scope div span[title="Em aprovação"]:before,
+	.containerCards > div.ng-scope div span[title="Aguardando área resolvedora"]:before {
+		font-family: FontAwesome;
+		content: "\f111";
+		font-size: 16px;
+		padding:0 4px;
+		color: var(--orange-700);
+	}
+	.containerCards > div.ng-scope div span[title="Concluído"]:before {
+		font-family: FontAwesome;
+		content: "\f058";
+		font-size: 16px;
+		padding:0 4px;
+		color: var(--celery-700);
+	}
+	.containerCards > div.ng-scope div span[title="Cancelado"]:before {
+		font-family: FontAwesome;
+		content: "\f2d3";
+		font-size: 16px;
+		padding:0 4px;
+		color: var(--red-600);
+	}
+
+/* KANBAN - Linha tipo de demanda */
+	.dropdownlabelCustom.label {
+		border: none !important;
+		font-size: 10px !important;
+		font-weight: 600 !important;
+		padding: 0 3px !important;
+		margin: 0;
+		border-radius: 0;
+	}
+	.dropdownlabelCustom.label[title="Ação pontual"] {
+		background-color: var(--gray-400) !important;
+		color: var(--orange-700) !important;
+	}
+	.dropdownlabelCustom.label[title="Jornada"] {
+		background-color: var(--gray-400) !important;
+		color: var(--celery-700) !important;
+	}
+	.dropdownlabelCustom.label[title="Texto"] {
+		background-color: var(--gray-400) !important;
+		color: var(--red-700) !important;
+	}
+	.dropdownlabelCustom.label[title="Layout"] {
+		background-color: var(--gray-400) !important;
+		color: var(--orange-700) !important;
+	}
+	.dropdownlabelCustom.label[title="HTML"] {
+		background-color: var(--gray-400) !important;
+		color: var(--celery-700) !important;
+	}
+	.dropdownlabelCustom.label[title="Revisão"] {
+		background-color: var(--gray-400) !important;
+		color: var(--gray-900) !important;
+	}
+	.dropdownlabelCustom.label[title="Ajuste"],
+	.dropdownlabelCustom.label[title="Suporte"],
+	.dropdownlabelCustom.label[title="Extração"]{
+		background-color: var(--gray-50) !important;
+		color: var(--gray-900) !important;
+	}
+	.dropdownlabelCustom.label[title="Suporte"] {
+		background-color: var(--gray-900) !important;
+		color: var(--gray-100) !important;
+	}
+	
+/* KANBAN - mini visor de scroll */
+	.scrollKanbanDiv {
+		height: 15px;
+		background-color: var(--gray-300);
+		position:absolute;
+		bottom:10px;
+		right: calc(100vw - 55%);
+		opacity: 0.3;
+		transition: opacity 0.2s ease-in-out;
+	}
+	.scrollKanbanDiv:hover {
+		opacity: 1;
+	}
+	.scrollKanbanColumn {
+		height: 8px;
+		background-color: var(--gray-50)
+	}
+	.scrollKanbanSquareCursorMove {
+		border: 2px solid var(--gray-600);
+	}
+	
+
+
+/* MODAL - registro de tarefa */
+	:has(.sliderOpen) #KanbanViewController #kanbanContainer {
+		display: none !important
+	}
+	.sliderOpen {
+		width: 100%;
+		transition-property: none !important;
+ 		transition-duration: unset !important;
+	}
+	#page-slide-btn{
+		background-color: var(--gray-900) !important;
+		color: var(--gray-100) !important;
+		border-radius: 0px!important;
+		left: 0;
+		top: 10px;
+		padding: 0;
+	}
+	
+	#page-slide-btn i{
+		transform: rotate(45deg);
+		font-size:20px;
+	}
+	
+	#page-slide-btn i:after {left: 7px; top: 12px;}
+	#page-slide-btn i:before {left: 14px; top: 19px;}
+	
+	
+	
+	
+/* LISTA modo tabela */
+	#container-list {
+		height: calc(100vh - 180px);
+	}
+	
+	#finder-list-table thead {
+		position: sticky;
+		top: 0;
+		background-color: var(--gray-50);
+	}
+	
+	.finder-table .label-success,
+	.finder-table .label-danger,
+	.finder-table .label-warning,
+	.finder-table .label-primary,
+	.finder-table .label-default {
+		background-color: transparent !important;
+		color: var(--gray-800) !important;
+		display: initial; 
+	}
+	
+	.finder-table span[uib-tooltip="Em andamento"]{
+		color: var(--celery-700) !important;
+	}
+	
+	.finder-table span[uib-tooltip="Em aprovação"]{
+		color: var(--orange-400) !important;
+	}
+	
+	.table-striped > tbody > tr:nth-child(2n+1) {
+		background-color: transparent !important;
+	}
+	
+	.table-striped > tbody > tr[style="background-color: rgba(255, 199, 199, 0.41);"] {
+		background-color: rgba(255, 0, 0, .2) !important;
+	}
+	
+	
+}
+
+
+@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/finder/BPM_WORKFLOW_5BC3C6") {/* KANBAN C/SELETOR */
+
+	/* KANBAN - Seletor de fluxo */
+	.kanban-summary {
+		display:block
+	}
+	#cardsKanban {
+		height: calc(100vh - 205px) !important;
+	}
+
+
+}
+@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms/dbextractor") {/* KANBAN - BUSCA AGENDADA */
+	.logo {
+		display:none
+	}
+	.form-background label {
+		color: var(--gray-900)
+	}
+	.form-background .form-group .form-control  {
+		background-color: var(--gray-400);
+		color: var(--gray-800);
+	}
+	.form-background .form-group .form-control::placeholder{
+		color: var(--gray-800);
+	}
+}
+
+
+@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/static/finder/edit.html") {/* KANBAN - FILTROS/BUSCA */
+
+	
+	.finder-edit body {
+		padding-left: 300px !important;
+	}
+	/* BARRRA ESQUERDA - FILTRO */
+	.finder-edit .field-container {
 		border: none;
 	}
 	.finder-edit .list-group-item {
@@ -1633,20 +1760,64 @@
 	}
 	
 	
+	/* MAIN CONTAINER */
+	.finder-edit .main-container {
+		background-color: var(--gray-200);
+		border: none;
+	}
+	
 	.finder-edit .well,
 	.finder-edit .rules-group-container {
-		background-color: var(--gray-200) !important;
-		border: 1px solid var(--gray-200) !important;
+		background-color: var(--gray-100) !important;
+		border: none !important;
+		border-radius: 4px
 	}
+	.finder-edit .rules-group-container {
+		padding: 20px
+	}
+	.finder-edit .well .form-control,
+	.rule-container .form-control
+	{
+		background-color: var(--gray-100);
+		color: var(--gray-800);
+		border-color: var(--gray-300);
+	}
+	
+	
+	/*CRITERIOS*/
+	.rule-container a.form-control {
+		background-color: var(--gray-100);
+		color: var(--gray-900);
+		border-color: var(--gray-300);
+	}
+	
+	.rule-container a.form-control small {
+		color: var(--gray-900);
+	}
+	.rule-container .dropdown-menu,
+	.rule-container .dropdown-menu .easy-autocomplete-container ul {
+		background-color:  var(--gray-75);
+		border-color: var(--gray-200);
+	}
+	.rule-container .dropdown-filter-item a,
+	.rule-container .dropdown-menu .easy-autocomplete-container li{
+		color: var(--gray-900);
+	}
+	.rule-container .dropdown-menu .easy-autocomplete-container li.selected {
+		color: var(--gray-100);
+	}
+
+	
+	/*PREVISUALIZACAO */
 	.group-container .group-data .group-data-row:nth-child(2n+1) {
 		background-color: var(--gray-75);
 	}
 	.group-container:last-child,
 	.group-container .group-data .group-data-row {
-		border: 1px solid var(--gray-200) !important;
+		border: 0 !important;
 	}
 	.group-container .group-handle {
-		border-bottom: 1px solid var(--gray-500);
+		border-bottom: 1px solid var(--gray-400);
 	}
 	.group-container .group-handle .group-title:hover,
 	.group-container .group-handle .group-title::placeholder,
@@ -1654,35 +1825,103 @@
 		background-color: var(--gray-300) !important;
 		color: var(--gray-900) !important;
 	}
-	.group-container .group-handle .group-title:focus {
-	  	background: var(--gray-50) !important;
-	  	border-color: var(--gray-500) !important;
-	}
 	
-	.finder-edit .well .form-control {
-		background-color: var(--gray-100);
-		color: var(--gray-500);
-	}
+	
 }
 
-@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms/dbextractor") {/* BUSCA AGENDADA */
-	.logo {
-		display:none
-	}
-	.form-background label {
-		color: var(--gray-900)
-	}
-	.form-background .form-group .form-control  {
-		background-color: var(--gray-400);
-		color: var(--gray-800);
-	}
-	.form-background .form-group .form-control::placeholder{
-		color: var(--gray-800);
-	}
-}
+
 
 @-moz-document url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpm.worklog.forms.bpm_worklog") {/* REGISTRO DE HORA */
 
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@-moz-document url("https://plusoft-itsm.inpaas.com/#!/home") {/*⛔ ABA VISÃO GERAL */
+	.panel{
+		background-color: var(--gray-100);
+	}
+	.text-primary, a.text-primary:hover, a.text-primary:focus {
+  		color: var(--gray-900);
+	}
+	.text-main, a.text-main:hover, a.text-main:focus {
+	  	color: var(--gray-900);
+	}
+	#container .table th {
+		color: var(--gray-900);
+	}
+	
+	.my-dashboard {
+		display:none
+	}
+	
+	.dropdown-menu {
+		background-color: var(--gray-100);
+		border: 1px solid var(--gray-300);
+	}
+	.dropdown-header {
+		color: var(--gray-600);
+	}
+	.dropdown-menu .divider {
+		background-color: var(--gray-300);
+	}
+	.btn-default {
+		background-color: var(--gray-200) !important;
+		border-color: var(--gray-400) !important;
+	}
+}
+
+@-moz-document url("https://plusoft-itsm.inpaas.com/#!/pending") {/*⛔ ABA MINHAS PENDENCIAS */
+	
+	#page-content {
+		padding: 0 30px!important
+	}
+	#content-container {
+		padding-bottom: 0!important
+	}
+
+	#page-head {
+		display: none
+	}
+
+	#panel-network {
+		background-color: initial !important;
+	}
+
+	/* LABEL */
+	span.label-danger {
+		background-color: transparent;
+		border: 1px solid var(--red-400);
+		color: var(--red-400) !important;
+	}
+	span.label-warning {
+		background-color: transparent;
+		border: 1px solid var(--orange-400);
+		color: var(--orange-400) !important;
+	}
+	span.label-success {
+		background-color: transparent;
+		border: 1px solid var(--celery-700);
+		color: var(--celery-700) !important;
+	}
+	
+}
+
