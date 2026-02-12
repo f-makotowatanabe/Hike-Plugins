@@ -75,7 +75,7 @@
         /* Busca as informações no chamado
         // -------------------------------------------- */
         const inputPrefixo = document.querySelector('[ng-model="vm.entity.data.prefix_alias"]')?.value || '';
-        const inputTitulo = document.getElementById('field-title')?.value || '';
+        const inputTitulo = document.querySelector('input[id="field-title"]')?.value || '';
         const inputStatus = document.querySelector('[ng-model="vm.entity.data._bpm_step_title"]');
         const inputData = document.getElementById('field-duedate');
         const inputHoraAlocadaCria = document.getElementById("field-field_currency_28ef7c");
@@ -120,7 +120,7 @@
 
         /* Converte data no formato ISO
         // -------------------------------------------- */
-        function converteParaIso(dataBrComHora) {
+        function converteDataIso(dataBrComHora) {
             const dataBr = dataBrComHora.split(' ')[0];
             const [dia, mes, ano] = dataBr.split('/');
             return `${ano}-${mes}-${dia}`;
@@ -135,8 +135,8 @@
             // -------------------------------------------- */
             const hoje = new Date();
             const hoje_formatado = hoje.toLocaleDateString('pt-BR');
-            const dataHoje = converteParaIso(hoje_formatado);
-            const dataChamado = converteParaIso(inputData.value);
+            const dataHoje = converteDataIso(hoje_formatado);
+            const dataChamado = converteDataIso(inputData.value);
 
             /* se existir input status no chamado
             // -------------------------------------------- */
@@ -235,7 +235,6 @@
             /* SE hora alocada for vazio
             // -------------------------------------------- */
             if (HoraAlocada === '') {
-                //const popVerificaHoras = '<div class="JSverificaHora" role="alert">O campo <strong>Horas alocadas</strong> está vazio!</div>';
                 const popVerificaHoras = '<div class="alert alert-warning alert-dismissible JSverificaHora" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Atenção!</strong> Preencha o campo horas alocadas.</div>';
                 RenderizaFlutuante.insertAdjacentHTML("afterend", popVerificaHoras);
             }
@@ -308,7 +307,6 @@
     }
     if (url.includes('/forms-v2/bpmruntime.userflows.forms.bpm_workflow_')) {
         console.log('PAGINA CHAMADO');
-        //PaginaChamado();
         setTimeout(PaginaChamado, 5000);
         return;
     }
@@ -323,6 +321,7 @@
         }
     });
     hideMenu.observe(document.body, { childList: true, subtree: true });
+
 
     /*  SCROLL SUAVE
     // ================================================== */
