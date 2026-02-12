@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HIKE
 // @description  Melhorias na interface do HIKE
-// @version      2026.02.10
+// @version      2026.02.12
 // @author       MakotoWatanabe
 // @icon         https://hikeplatform.com/wp-content/themes/area-structure-1/assets/images/favicon.png
 // @match        https://plusoft-itsm.inpaas.com/*
@@ -30,7 +30,7 @@
             altera1.forEach(element => {
                 element.classList.remove('col-sm-6');
                 element.classList.remove('col-md-4');
-                element.classList.add('col-sm-2');
+                element.classList.add('col-sm-3');
             });
             const altera2 = Campobusca.querySelectorAll('.row:nth-child(1)>div:nth-child(2)');
             altera2.forEach(element => {
@@ -42,7 +42,7 @@
             altera3.forEach(element => {
                 element.classList.remove('col-sm-6');
                 element.classList.remove('col-md-4');
-                element.classList.add('col-sm-4');
+                element.classList.add('col-sm-3');
             });
 
             const altera4 = Campobusca.querySelectorAll('.row:nth-child(2)>div:nth-child(1)');
