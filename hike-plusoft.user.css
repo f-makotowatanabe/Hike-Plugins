@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Hike
 @namespace			PLUSOFT
-@version			2026.02.10
+@version			2026.02.12
 @author				@MakotoWatanabe <fernandomakoto@plusoft.com>
 @description		Ajustes e melhorias para plataform Plusoft Hike
 @homepageURL		https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/hike-plusoft.user.css
@@ -1232,6 +1232,21 @@
 	.finder-desk .field-wrapper #txt-finder-term {
 		margin-left:25px;
 	}
+	
+	/*
+	.composeSearch-string {
+		margin-top:-9px;
+		width:100%;
+	}
+	.field-wrapper .composeSearch-composition input.form-control {
+		width:100% !important;
+		margin-left: 0 !important;
+	}
+	.compose-search .composeSearch-string .dropdown-menu,
+	.compose-search .open .dropdown-menu, compose-search .input-date-wrapper .input-date {
+		left: 0 !important;
+	}
+	*/
 	
 	/* FILTRAR */
 	.input-group.finder-container select {
