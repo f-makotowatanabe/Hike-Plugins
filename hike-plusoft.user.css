@@ -13,7 +13,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
-@-moz-document domain("plusoft-itsm.inpaas.com") {/* GERAL */
+@-moz-document 
+	domain("plusoft-itsm.inpaas.com") {
+	/* GERAL */
 	
 	:root {
 
@@ -323,7 +325,9 @@
 }
 
 
-@-moz-document url("https://plusoft-itsm.inpaas.com/forms/bpm.static.forms.pages.pendingissues") {/* ABA MINHAS PENDENCIAS */
+@-moz-document 
+	url("https://plusoft-itsm.inpaas.com/forms/bpm.static.forms.pages.pendingissues") {
+	/* ABA MINHAS PENDENCIAS */
 	
 	.panel{
 		background-color: var(--gray-100);
@@ -358,7 +362,9 @@
 }
 
 
-@-moz-document url("https://plusoft-itsm.inpaas.com/#!/workflows") {/* ABA PROCESSOS */
+@-moz-document
+	url("https://plusoft-itsm.inpaas.com/#!/workflows") {
+	/* ABA PROCESSOS */
 
 	/* CONTENT */
 	#page-content {
@@ -432,7 +438,11 @@
 	
 }
 
-@-moz-document url("https://plusoft-itsm.inpaas.com/#!/dynamiciframe?link=50a17884-bcf2-4095-b090-dd4628c7827c"), url("https://plusoft-itsm.inpaas.com/forms/bpm.static.forms.pages.alldemands") {/* ABA TODAS AS DEMANDAS */
+@-moz-document
+	url("https://plusoft-itsm.inpaas.com/#!/dynamiciframe?link=50a17884-bcf2-4095-b090-dd4628c7827c"),
+	url("https://plusoft-itsm.inpaas.com/forms/bpm.static.forms.pages.alldemands") {
+	/* ABA TODAS AS DEMANDAS */
+
 
 	/* CONTENT */
 	#page-content {
@@ -470,7 +480,12 @@
 
 
 
-@-moz-document url-prefix("https://plusoft-itsm.inpaas.com/#!/dynamiciframe?link=bpmruntime.userflows.forms.bpm_workflow_"),url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpm.worklog.forms.bpm_worklog"), url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpmruntime.userflows.forms.bpm_workflow_") {/* PAGINA CHAMADO */
+@-moz-document 
+	url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/hike.itsm.main.forms.hike_itsm_projectactivity_"),
+	url-prefix("https://plusoft-itsm.inpaas.com/#!/dynamiciframe?link=bpmruntime.userflows.forms.bpm_workflow_"),
+	url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpm.worklog.forms.bpm_worklog"), 
+	url-prefix("https://plusoft-itsm.inpaas.com/forms-v2/bpmruntime.userflows.forms.bpm_workflow_") {
+	/* PAGINA CHAMADO */
 	
 	.container-fluid {
 		margin: 0!important;
