@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         HIKE
 // @description  Melhorias na interface do HIKE
-// @version      2026.02.12
+// @version      2026.04.07
 // @author       MakotoWatanabe
 // @icon         https://hikeplatform.com/wp-content/themes/area-structure-1/assets/images/favicon.png
 // @match        https://plusoft-itsm.inpaas.com/*
-// @downloadURL  https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/script-hike-plusoft.user.js
-// @updateURL    https://raw.githubusercontent.com/f-makotowatanabe/Hike-Plugins/refs/heads/main/script-hike-plusoft.user.js
+// @downloadURL  https://github.com/f-makotowatanabe/Hike-Plugins/raw/refs/heads/main/hike-plusoft.user.js
+// @updateURL    https://github.com/f-makotowatanabe/Hike-Plugins/raw/refs/heads/main/hike-plusoft.user.js
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
@@ -16,9 +16,11 @@
     const $ = window.jQuery;
     const url = window.location.href;
 
-    /* WORKFLOW
+
+    /* PAGINA DE WORKFLOW
     ========================= */
     function PaginaWorkflow() {
+        
 
         /* Arruma o tamanho das colunas do bootstrap
         // -------------------------------------------- */
@@ -66,9 +68,19 @@
             element.classList.remove('pad-rgt');
         });
 
+        /* Remove os styles e classes lixo do html original
+        // -------------------------------------------- */
+        document.querySelectorAll('[style]').forEach(element => {
+            element.removeAttribute('style');
+        });
+        document.querySelectorAll('[class]').forEach(element => {
+            element.classList.remove('hidden-xs');
+            element.classList.remove('pull-left');
+        });
+
     }
 
-    /* CHAMADO
+    /* PAGINA DE CHAMADO
     ========================= */
     function PaginaChamado() {
 
@@ -298,20 +310,21 @@
 
     }
 
+
     /* CHAVEAMENTO DE PAGINA
     // ================================================== */
     if (url.includes('/forms-v2/finder/BPM_WORKFLOW_')) {
-        console.log('PAGINA WORKFLOW');
+        //console.log('PAGINA WORKFLOW');
         PaginaWorkflow();
         return;
     }
-    if (url.includes('/forms-v2/bpmruntime.userflows.forms.bpm_workflow_')) {
-        console.log('PAGINA CHAMADO');
-        setTimeout(PaginaChamado, 5000);
+    if (url.includes('/forms-v2/bpmruntime.userflows.forms.bpm_workflow_')||url.includes('/forms-v2/hike.itsm.main.forms.hike_itsm_projectactivity_')) {
+        //console.log('PAGINA CHAMADO');
+        setTimeout(PaginaChamado, 4500);
         return;
     }
 
-    /*  FECHA MENU ESQUERDO
+    /*  FECHA O MENU ESQUERDO
     // ================================================== */
     const hideMenu = new MutationObserver(() => {
         const tooggle = document.querySelector('a.mainnav-toggle');
@@ -321,6 +334,7 @@
         }
     });
     hideMenu.observe(document.body, { childList: true, subtree: true });
+
 
 
     /*  SCROLL SUAVE
